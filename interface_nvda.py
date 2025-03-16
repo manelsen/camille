@@ -70,8 +70,8 @@ class ConfiguracaoDialog(wx.Dialog):
         sizer_chave_mistral.Add(self.label_chave_mistral, 0, wx.ALL, 5)
         
         self.text_chave_mistral = wx.TextCtrl(painel_principal, 
-                                             value=configuracao_atual.chaves_api.get(ProvedorIA.MISTRAL, "") or "",
-                                             style=wx.TE_PASSWORD)
+                                            value=configuracao_atual.chaves_api.get(ProvedorIA.MISTRAL, "") or "",
+                                            style=wx.TE_PASSWORD)
         sizer_chave_mistral.Add(self.text_chave_mistral, 1, wx.ALL, 5)
         sizer.Add(sizer_chave_mistral, 0, wx.EXPAND, 5)
         
@@ -189,13 +189,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
             elif provedor == ProvedorIA.MISTRAL:
                 self.adaptadores[provedor] = AdaptadorMistral(chave_api)
     
-    def _criar_menu(self) -> None:
-        """Cria o item de menu para as configurações do plugin."""
+def _criar_menu(self) -> None:
+    """Cria o item de menu para as configurações do plugin."""
+    try:
         self.menu = gui.mainFrame.sysTrayIcon.preferencesMenu
-        self.item_menu = self.menu.Append(wx.ID_ANY, 
-                                          _("&Descrição de Imagem por IA..."),
-                                          _("Configurar o complemento de descrição de imagem por IA"))
+        self.item_menu = self.menu.Append(
+            wx.ID_ANY, 
+            _("&Descrição de Imagem por IA..."),
+            _("Configurar o complemento de descrição de imagem por IA")
+        )
         gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.on_exibir_configuracoes, self.item_menu)
+        print("Menu de configurações criado com sucesso.")
+    except Exception as e:
+        print(f"Erro ao criar menu: {e}")
     
     def on_exibir_configuracoes(self, evt) -> None:
         """Exibe o diálogo de configurações."""
