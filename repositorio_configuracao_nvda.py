@@ -5,11 +5,11 @@ from typing import Dict, Any, Optional
 from returns.result import Result, Success, Failure
 from cryptography.fernet import Fernet
 
-from ..dominio.entidades import (
+from entidades import (
     ProvedorIA, ChaveAPI, ErroConfiguracao,
     Configuracao
 )
-from ..portas.repositorio_configuracao import RepositorioConfiguracao
+from repositorio_configuracao import RepositorioConfiguracao
 
 class RepositorioConfiguracaoNVDA(RepositorioConfiguracao):
     """Adaptador para armazenamento de configurações no NVDA."""

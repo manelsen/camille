@@ -5,8 +5,8 @@ from returns.curry import curry
 from returns.pipeline import pipe
 from returns.pointfree import bind
 
-from ..portas.repositorio_configuracao import RepositorioConfiguracao
-from ..dominio.entidades import Configuracao, ProvedorIA
+from repositorio_configuracao import RepositorioConfiguracao
+from entidades import Configuracao, ProvedorIA
 
 @curry
 def obter_configuracao(

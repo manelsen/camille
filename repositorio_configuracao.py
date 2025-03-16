@@ -2,7 +2,7 @@
 from typing import Protocol, Dict, Any
 from returns.result import Result
 
-from ..dominio.entidades import Configuracao, ProvedorIA, ChaveAPI, ErroConfiguracao
+from entidades import Configuracao, ProvedorIA, ChaveAPI, ErroConfiguracao
 
 class RepositorioConfiguracao(Protocol):
     """

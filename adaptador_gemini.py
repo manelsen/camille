@@ -6,8 +6,8 @@ from PIL import Image
 from google import genai
 from google.genai.types import Part
 
-from ..dominio.entidades import CaminhoImagem, DescricaoImagem, ErroIA, ProvedorIA
-from ..portas.servico_ia import ServicoIA
+from entidades import CaminhoImagem, DescricaoImagem, ErroIA, ProvedorIA
+from servico_ia import ServicoIA
 
 class AdaptadorGemini(ServicoIA):
     """Adaptador para o serviço de IA do Google Gemini utilizando o SDK oficial."""

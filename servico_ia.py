@@ -3,7 +3,7 @@ from abc import ABC
 from typing import Protocol
 from returns.result import Result
 
-from ..dominio.entidades import CaminhoImagem, DescricaoImagem, ErroIA
+from .entidades import CaminhoImagem, DescricaoImagem, ErroIA
 
 class ServicoIA(Protocol):
     """

@@ -9,8 +9,8 @@ from PIL import Image
 # Importando o SDK do Mistral
 from mistralai import Mistral
 
-from ..dominio.entidades import CaminhoImagem, DescricaoImagem, ErroIA, ProvedorIA
-from ..portas.servico_ia import ServicoIA
+from entidades import CaminhoImagem, DescricaoImagem, ErroIA, ProvedorIA
+from servico_ia import ServicoIA
 
 class AdaptadorMistral(ServicoIA):
     """Adaptador para o serviço de IA do Mistral AI com suporte a imagens locais e URLs."""

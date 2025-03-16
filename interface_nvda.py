@@ -14,14 +14,14 @@ import config
 
 from returns.result import Result, Success, Failure
 
-from .dominio.casos_uso import gerar_descricao_imagem
-from .dominio.entidades import Configuracao, ProvedorIA
-from .portas.servico_ia import ServicoIA
-from .adaptadores.adaptador_gemini import AdaptadorGemini
-from .adaptadores.adaptador_mistral import AdaptadorMistral
-from .adaptadores.adaptador_ocr import AdaptadorOCR
-from .adaptadores.repositorio_configuracao_nvda import RepositorioConfiguracaoNVDA
-from .infraestrutura.gerenciador_configuracao import (
+from casos_uso import gerar_descricao_imagem
+from entidades import Configuracao, ProvedorIA
+from servico_ia import ServicoIA
+from adaptador_gemini import AdaptadorGemini
+from adaptador_mistral import AdaptadorMistral
+from adaptador_ocr import AdaptadorOCR
+from repositorio_configuracao_nvda import RepositorioConfiguracaoNVDA
+from gerenciador_configuracao import (
     obter_configuracao, obter_chave_api_para_provedor,
     salvar_configuracao
 )

@@ -6,8 +6,8 @@ from returns.pipeline import pipe
 from returns.curry import curry
 from returns.pointfree import bind, map_
 
-from ..portas.servico_ia import ServicoIA
-from ..dominio.entidades import (
+from servico_ia import ServicoIA
+from entidades import (
     Imagem, Descricao, ProvedorIA, CaminhoImagem,
     DescricaoImagem, ErroIA
 )
